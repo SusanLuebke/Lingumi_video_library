@@ -8,7 +8,8 @@ class Videos extends Component {
       super(props);
       this.state = {
         videos: [],
-        searchField: "", // updates state with the search term
+        searchField: "",
+        sort: "" // updates state with the search term
       };
     }
 
@@ -33,14 +34,39 @@ class Videos extends Component {
     this.setState({ searchField: event.target.value }); // value is text typed into search
   };
 
+  handleSort = (event) => {
+    this.setState({ sort: event.target.value}) 
+  }
+
+  cleanData = (data) => { // default value for missing data
+      const cleanedData = data.body.map((video) => {
+        // if(video.hasOwnProperty('averageUserRating') === false) {
+        //   video['averageUserRating'] = 0000;
+        // }
+        // else if(video.hasOwnProperty('imageLinks') === false) {
+        //   video['imageLinks'] = { thumbnail: .\images\video.thumbnail.jpg }
+        // }
+
+        return video;
+      })
+
+      return cleanedData;
+  }
+
   render() {
+    const sortedVideos = this.state.videos.sort(a => {
+      if(this.state.sort === 'Top 20') {       
+        return parseInt(a.averageUserRating);
+      }
+    })
     return (
       <div>
         <SearchArea
           searchVideo={this.searchVideo}
           handleSearch={this.handleSearch} // passed in as a prop
+          handleSort={this.handleSort}
         />
-        <VideoList videos={this.state.videos} />
+        <VideoList videos={sortedVideos} />
       </div>
     );
   }

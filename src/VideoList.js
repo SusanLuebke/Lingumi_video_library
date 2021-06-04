@@ -8,6 +8,7 @@ const VideoList = (props) => {
         return (
           <VideoCard // pass down info. props
             key={i}
+            iconPlaceholder={video.videoIcon}
             videoTitle={video.videoTitle}
             teacherName={video.teacherName}
             tags={video.tags}

@@ -4,10 +4,11 @@ const VideoCard = (props) => {
   return (
     <div className="card-container">
       <div className="desc">
-        <h2>{props.videoTitle}</h2>
-        <h3>{props.teacherName}</h3>
-        <p>{props.tags}</p>
-        <p>{props.averageUserRating}</p>
+        <img src='../images/video.thumbnail.jpg' alt="icon" />
+        <h2>Video Title: {props.videoTitle}</h2>
+        <h3>Teacher Name: {props.teacherName}</h3>
+        <p>Video Description Tags: {props.tags}</p>
+        <p>Average User Rating: {props.averageUserRating}</p>
       </div>
     </div>
   );
