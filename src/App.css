@@ -18,5 +18,23 @@ h1 {
 
 form {
   text-align: center;
+  font-size: medium;
+  margin-top: 15px;
+  padding: 20px;
+}
+
+button {
+  text-align: center;
+  font-size: medium;
+  background-color: #deebf8;
+  margin-left: 10px;
   margin-top: 15px;
 }
+
+option {
+  text-align: center;
+  font-size: medium;
+  margin-left: 10px;
+  margin-top: 15px;
+}
+
