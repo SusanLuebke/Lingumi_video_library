@@ -40,7 +40,7 @@ class Videos extends Component {
           searchVideo={this.searchVideo}
           handleSearch={this.handleSearch} // passed in as a prop
         />
-        <Videolist videos={this.state.videos} />
+        <VideoList videos={this.state.videos} />
       </div>
     );
   }
