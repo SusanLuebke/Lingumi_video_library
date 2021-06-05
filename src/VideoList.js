@@ -23,7 +23,7 @@ const VideoList = (props) => {
           );
         })}{' '}
         <tr>
-          <td colSpan="10">Awaiting search options...</td>
+          <td colSpan="10">Searching for videos...</td>
         </tr>
       </tbody>
     </table>

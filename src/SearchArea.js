@@ -12,6 +12,7 @@ const SearchArea = (props) => {
           </option>
           <option value="Top 20">Top 20</option>
         </select>
+        <button onClick={() => window.location.reload(false)}>Refresh Search</button>
       </form>
     </div>
   );

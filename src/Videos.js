@@ -45,10 +45,11 @@ class Videos extends Component {
       });
   };
 
+  // Doesn't currently have capability to search for more than one in each category
   handleSearch = (event) => {
     // method
     console.log(event.target.value); // verifies search term capture
-    this.setState({ searchField: event.target.value.split(',') }); // value is text typed into search
+    this.setState({ searchField: event.target.value.split(', ') }); // value is text typed into search
   };
 
   handleSort = (event) => {
