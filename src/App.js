@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Header from './Header';
 import Videos from './Videos';
 import './App.css';
-import Table from './Table';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component {
@@ -12,7 +11,6 @@ class App extends Component {
         
         <Header />
         <Videos />
-        {/* <Table /> */}
       </div>
     );
   }

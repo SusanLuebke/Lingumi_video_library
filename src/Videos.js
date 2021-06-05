@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import SearchArea from './SearchArea';
 import request from 'superagent';
 import VideoList from './VideoList';
-import Table from './Table';
 
 class Videos extends Component {
   constructor(props) {
