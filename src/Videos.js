@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import SearchArea from './SearchArea';
 import request from 'superagent';
 import VideoList from './VideoList';
+import Table from './Table';
 
 class Videos extends Component {
   constructor(props) {
@@ -10,6 +11,7 @@ class Videos extends Component {
       videos: [],
       searchField: '',
       sort: '', // updates state with the search term
+
     };
   }
 
@@ -43,12 +45,9 @@ class Videos extends Component {
   cleanData = (data) => {
     // default value for missing data
     const cleanedData = data.body.map((video) => {
-      // if(video.hasOwnProperty('averageUserRating') === false) {
-      //   video['averageUserRating'] = 0000;
-      // }
-      // else if(video.hasOwnProperty('imageLinks') === false) {
-      //   video['imageLinks'] = { thumbnail: .\images\video.thumbnail.jpg }
-      // }
+      if (video.hasOwnProperty('averageUserRating') === false) {
+        video['averageUserRating'] = '0000';
+      }
 
       return video;
     });
@@ -69,7 +68,9 @@ class Videos extends Component {
           handleSearch={this.handleSearch} // passed in as a prop
           handleSort={this.handleSort}
         />
-        <VideoList videos={sortedVideos} />
+        <VideoList videos={this.state.videos} />
+        {/* <Table videos={ this.state.videos } />
+        console.log(this.state.videos.length) */}
       </div>
     );
   }

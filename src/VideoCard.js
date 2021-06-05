@@ -4,7 +4,7 @@ const VideoCard = (props) => {
   return (
     <div className="card-container">
       <div className="desc">
-        <img src={require('./images/video.thumbnail.jpg').default} alt="icon" />
+        {/* <img src={require('./assets/video.thumbnail.jpg').default} alt="icon" /> */}
         <h2>Video Title: {props.videoTitle}</h2>
         <h3>Teacher Name: {props.teacherName}</h3>
         <p>Video Description Tags: {props.tags}</p>

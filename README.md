@@ -18,6 +18,7 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 ### `installations`
 
 npm install --save superagent
+npm install bootstrap
 
 ### `yarn build`
 
