@@ -23,17 +23,32 @@ class Videos extends Component {
     event.preventDefault();
     request
       .get('https://lingumi-take-home-test-server.herokuapp.com/videoTutorials')
-      .query({ query: this.state.searchField })
+      // .query({ query: this.state.searchField })
       .then((data) => {
-        console.log(data);
-        this.setState({ videos: [...data.body] });
+        let result = data.body.slice(0);
+        for (let element of this.state.searchField) {
+          result = result.filter((body) => {
+            return (
+              body['videoTitle']
+                .toLowerCase()
+                .includes(element.toLowerCase()) ||
+              body['teacherName']
+                .toLowerCase()
+                .includes(element.toLowerCase()) ||
+              body['tags']
+                .map((tag) => tag.toLowerCase())
+                .includes(element.toLowerCase())
+            );
+          });
+        }
+        this.setState({ videos: [...result] });
       });
   };
 
   handleSearch = (event) => {
     // method
     console.log(event.target.value); // verifies search term capture
-    this.setState({ searchField: event.target.value }); // value is text typed into search
+    this.setState({ searchField: event.target.value.split(',') }); // value is text typed into search
   };
 
   handleSort = (event) => {
