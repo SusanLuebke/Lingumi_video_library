@@ -67,9 +67,7 @@ class Videos extends Component {
           handleSearch={this.handleSearch} // passed in as a prop
           handleSort={this.handleSort}
         />
-        <VideoList videos={this.state.videos} />
-        {/* <Table videos={ this.state.videos } />
-        console.log(this.state.videos.length) */}
+        <VideoList videos={sortedVideos} />
       </div>
     );
   }

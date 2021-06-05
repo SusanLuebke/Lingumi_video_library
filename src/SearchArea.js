@@ -6,7 +6,7 @@ const SearchArea = (props) => {
       <form onSubmit={props.searchVideo} action="">
         <input type="text" onChange={props.handleSearch} />
         <button type="submit">Search</button>
-        <select defaultValue="Sort" onChange={props.handleSort}>
+        <select className="sort" defaultValue="Sort" onChange={props.handleSort}>
           <option disabled value="Sort">
             Sort
           </option>
