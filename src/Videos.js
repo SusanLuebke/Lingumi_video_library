@@ -10,7 +10,6 @@ class Videos extends Component {
       videos: [],
       searchField: '',
       sort: '', // updates state with the search term
-
     };
   }
 
@@ -24,7 +23,7 @@ class Videos extends Component {
     event.preventDefault();
     request
       .get('https://lingumi-take-home-test-server.herokuapp.com/videoTutorials')
-      .query({ q: this.state.searchField })
+      .query({ query: this.state.searchField })
       .then((data) => {
         console.log(data);
         this.setState({ videos: [...data.body] });
@@ -45,17 +44,16 @@ class Videos extends Component {
     // default value for missing data
     const cleanedData = data.body.map((video) => {
       if (video.hasOwnProperty('averageUserRating') === false) {
-        video['averageUserRating'] = '0000';
+        video['averageUserRating'] = '0.000';
       }
-
       return video;
     });
-
     return cleanedData;
   };
 
   render() {
     const sortedVideos = this.state.videos.sort((a, b) => {
+      // let topTwenty = sortedVideos.filter((value, i) =>i<20)
       if (this.state.sort === 'Top 20') {
         return a.averageUserRating < b.averageUserRating ? 1 : -1;
       }

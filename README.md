@@ -12,13 +12,13 @@ You will also see any lint errors in the console.
 
 ### `npm test or yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Launches tests using Jest and enzyme; which complement each other well with Jest as a simplie test runner and Enzyme a library used to test React applications.
 
 ### `installations`
 
 npm install --save superagent
 npm install bootstrap
+npm install --save-dev enzyme enzyme-adapter-react-16 react-test-renderer
 
 ### `yarn build`
 
