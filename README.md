@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+# Lingumi Video Library
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Supporting Project Kanban
+
+The supporting project Kanban can be found on (https://github.com/SusanLuebke/Lingumi_video_library/projects/1).
 
 ### `npm start`
 

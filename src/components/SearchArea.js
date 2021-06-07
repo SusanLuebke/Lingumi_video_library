@@ -3,8 +3,8 @@ import React from 'react';
 const SearchArea = (props) => {
   return (
     <div className="search-area">
-      <form onSubmit={props.searchVideo} action="">
-        <input type="text" onChange={props.handleSearch} />
+      <form onSubmit={props.searchVideo} action=" ">
+        <input type="text" onChange={props.getTopRatedTutorialsForTags} />
         <button type="submit">Search</button>
         <select className="sort" defaultValue="Sort" onChange={props.handleSort}>
           <option disabled value="Sort">

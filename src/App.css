@@ -38,6 +38,11 @@ option {
   margin-top: 15px;
 }
 
+td, th {
+  border: 1px solid rgb(190, 190, 190);
+  padding: 6px 10px;
+}
+
 .sort {
   margin-left: 10px;
   margin-right: 10px;
@@ -50,10 +55,4 @@ option {
   margin-left: 25px;
   margin-top: 15px;
   color: #2d4e70;
-}
-
-td,
-th {
-  border: 1px solid rgb(190, 190, 190);
-  padding: 6px 10px;
 }

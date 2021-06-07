@@ -23,7 +23,6 @@ class Videos extends Component {
     event.preventDefault();
     request
       .get('https://lingumi-take-home-test-server.herokuapp.com/videoTutorials')
-      // .query({ query: this.state.searchField })
       .then((data) => {
         let result = data.body.slice(0);
         for (let element of this.state.searchField) {
@@ -46,7 +45,7 @@ class Videos extends Component {
   };
 
   // Doesn't currently have capability to search for more than one in each category
-  handleSearch = (event) => {
+  getTopRatedTutorialsForTags = (event) => {
     // method
     console.log(event.target.value); // verifies search term capture
     this.setState({ searchField: event.target.value.split(', ') }); // value is text typed into search
@@ -68,7 +67,7 @@ class Videos extends Component {
       <div>
         <SearchArea
           searchVideo={this.searchVideo}
-          handleSearch={this.handleSearch} // passed in as a prop
+          getTopRatedTutorialsForTags={this.getTopRatedTutorialsForTags} // passed in as a prop
           handleSort={this.handleSort}
         />
         <VideoList videos={sortedVideos} />
