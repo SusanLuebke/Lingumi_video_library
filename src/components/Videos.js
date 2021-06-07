@@ -53,33 +53,8 @@ class Videos extends Component {
   };
 
   handleSort = (event) => {
+    this.setState({ videos: this.state.videos.slice(0, 20) });
     this.setState({ sort: event.target.value });
-  };
-
-  cleanData = (data) => {
-    // default value for missing data
-    const cleanedData = data.body.map((video) => {
-      if (video.hasOwnProperty('averageUserRating') === false) {
-        video['averageUserRating'] = '0.000';
-      }
-      return video;
-    });
-    return cleanedData;
-  };
-
-  handleTopTwenty = (data) => {
-    function compare(a, b) {
-      if (a.averageUserRating > b.averageUserRating) {
-        return -1;
-      }
-      if (a.averageUserRating < b.averageUserRating) {
-        return 1;
-      }
-      return 0;
-    }
-
-    data.sort(compare);
-    return data.slice(0, 20);
   };
 
   render() {
@@ -87,6 +62,7 @@ class Videos extends Component {
       if (this.state.sort === 'Top 20') {
         return a.averageUserRating < b.averageUserRating ? 1 : -1;
       }
+      return null;
     });
     return (
       <div>

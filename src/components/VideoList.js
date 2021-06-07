@@ -17,7 +17,7 @@ const VideoList = (props) => {
             <tr key={i}>
               <td>{video.videoTitle}</td>
               <td>{video.teacherName}</td>
-              <td>{video.tags.join(", ")}</td>
+              <td>{video.tags.join(', ')}</td>
               <td>{Number(video.averageUserRating).toFixed(3)}</td>
             </tr>
           );
