@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Header from './Header';
-import Videos from './Videos';
+import Header from './components/Header';
+import Videos from './components/Videos';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 

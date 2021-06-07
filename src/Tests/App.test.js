@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import { shallow, mount } from 'enzyme';
 import App from '../App';
-import Header from '../Header';
-import VideoList from '../VideoList';
+import Header from '../components/Header';
+import VideoList from '../components/VideoList';
 
 describe('<App />', () => {
   test('Renders <App /> component correctly', () => {
@@ -35,3 +35,5 @@ describe('Mock for videos props', () => {
     expect(value).toEqual('Katy');
   });
 });
+
+// Error message for search items not found based on search term
