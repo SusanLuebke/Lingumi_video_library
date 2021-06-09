@@ -55,10 +55,10 @@ describe('SearchArea component', () => {
   //   expect(mockHandleChange).toHaveBeenCalledWith();
   // });
 
-  test('it calls start logout on button click', () => {
-    const mockLogout = jest.fn();
-    const wrapper = shallow(<SearchArea startLogout={mockLogout}/>);
-    wrapper.find('button').at(0).simulate('click');
-    expect(mockLogout).toHaveBeenCalled();
-  });
+  // test('it calls start logout on button click', () => {
+  //   const mockLogout = jest.fn();
+  //   const wrapper = shallow(<SearchArea startLogout={mockLogout}/>);
+  //   wrapper.find('button').at(0).simulate('click');
+  //   expect(mockLogout).toHaveBeenCalled();
+  // });
 });

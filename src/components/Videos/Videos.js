@@ -44,7 +44,6 @@ class Videos extends Component {
       });
   };
 
-  // Doesn't currently have capability to search for more than one in each category
   getTopRatedTutorialsForTags = (event) => {
     // method
     console.log(event.target.value); // verifies search term capture
