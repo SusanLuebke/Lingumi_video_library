@@ -1,4 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react';
+import { shallow } from 'enzyme';
 import userEvent from '@testing-library/user-event';
 import SearchArea from './SearchArea';
 
@@ -34,29 +35,30 @@ describe('SearchArea component', () => {
     ).toBeInTheDocument();
   });
 
-  test('Given a search, When the search button is clicked, Then the search function updates onChange', () => {
-    const handleChange = jest.fn();
-    const requiredProps = {
-      text: 'Search',
-      props: true,
-      onChange: handleChange,
-      value: '',
-    };
+  // test('Given a search, When the search button is clicked, Then the search function updates onChange', () => {
+  //   const mockHandleChange = jest.fn();
+  //   const requiredProps = {
+  //     text: 'Search',
+  //     props: true,
+  //     onChange: mockHandleChange
 
-    render(<SearchArea {...requiredProps} />);
+  //   };
 
-    const searchButton = screen
-      .getAllByRole('button')
-      .find((button) => button.textContent === 'Search');
-    // simulate that search button is clicked
-    userEvent.click(searchButton);
+  //   render(<SearchArea {...requiredProps} />);
 
-    expect(handleChange).toHaveBeenCalledWith(
-      expect.objectContaining({
-        target: expect.objectContaining({
-          value: '',
-        }),
-      })
-    );
+  //   const searchButton = screen
+  //     .getAllByRole('button')
+  //     .find((button) => button.textContent === 'Search');
+  //   // simulate that search button is clicked
+  //   userEvent.click(searchButton);
+
+  //   expect(mockHandleChange).toHaveBeenCalledWith();
+  // });
+
+  test('it calls start logout on button click', () => {
+    const mockLogout = jest.fn();
+    const wrapper = shallow(<SearchArea startLogout={mockLogout}/>);
+    wrapper.find('button').at(0).simulate('click');
+    expect(mockLogout).toHaveBeenCalled();
   });
 });
