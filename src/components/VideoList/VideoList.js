@@ -5,7 +5,7 @@ const VideoList = (props) => {
     <table className="list">
       <thead className="title">
         <tr>
-          <th>Video Title</th>
+          <th>Video Title </th>
           <th>Teacher Name </th>
           <th>Video Description Tags </th>
           <th>Average User Rating</th>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import SearchArea from '../SearchArea/SearchArea';
 import request from 'superagent';
-import VideoList from '../VideoList';
+import VideoList from '../VideoList/VideoList';
 
 class Videos extends Component {
   constructor(props) {
@@ -18,7 +18,7 @@ class Videos extends Component {
     searchField: '',
   };
 
-  searchVideo = (event) => {
+  searchForTutorials = (event) => {
     // method
     event.preventDefault();
     request
@@ -65,7 +65,7 @@ class Videos extends Component {
     return (
       <div>
         <SearchArea
-          searchVideo={this.searchVideo}
+          searchForTutorials={this.searchForTutorials}
           getTopRatedTutorialsForTags={this.getTopRatedTutorialsForTags} // passed in as a prop
           handleSort={this.handleSort}
         />
