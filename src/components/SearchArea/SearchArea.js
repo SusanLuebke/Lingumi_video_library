@@ -4,7 +4,7 @@ const SearchArea = (props) => {
   return (
     <div className="search-area">
       <form onSubmit={props.searchForTutorials} action=" ">
-        <input type="text" onChange={props.getTopRatedTutorialsForTags} />
+        <input type="text" id="topRated"  onChange={props.getTopRatedTutorialsForTags} />
         <button type="submit">Search</button>
         <select
           className="sort"

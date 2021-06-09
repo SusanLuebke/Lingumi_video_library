@@ -1,6 +1,4 @@
 import { render, screen } from '@testing-library/react';
-import VideoList from './VideoList';
-import { shallow } from 'enzyme';
 
 describe('VideoList component', () => {
   afterEach(() => jest.clearAllMocks());

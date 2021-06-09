@@ -1,5 +1,6 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import SearchArea from './SearchArea';
+import userEvent from '@testing-library/user-event';
 
 describe('SearchArea component', () => {
   afterEach(() => jest.clearAllMocks());
@@ -30,6 +31,36 @@ describe('SearchArea component', () => {
           (button) =>
             button.textContent === 'Search' || button.textContent === 'Refresh'
         )
+    ).toBeInTheDocument();
+  });
+
+  test('Tests core components/methods', () => {
+    const handleChangeMock = jest.fn();
+    // workaround for a documented issue
+    handleChangeMock.mockImplementation((event) => {
+      event.preventDefault();
+    });
+
+    render(
+      <SearchArea
+        searchVideo={handleChangeMock}
+        getTopRatedTutorialsForTags={handleChangeMock}
+        handleSort={handleChangeMock}
+      />
+    );
+
+    const searchButton = screen
+      .getAllByRole('button')
+      .find((button) => button.textContent === 'Search');
+    // simulate that search button is clicked
+    userEvent.click(searchButton);
+
+    // expect(handleChangeMock).toHaveBeenCalledTimes(1);
+
+    expect(
+      screen
+        .getAllByRole('textbox')
+        .find((textbox) => textbox.id === 'topRated')
     ).toBeInTheDocument();
   });
 });
